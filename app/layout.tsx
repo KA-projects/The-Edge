@@ -1,6 +1,27 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Oswald, Lora, Kanit } from "next/font/google";
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["700", "200", "400"],
+  display: "swap",
+  variable: "--font-oswald",
+});
+
+const kanit = Kanit({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-kanit",
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["700", "400"],
+  display: "swap",
+  variable: "--font-lora",
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +37,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${inter.className} ${oswald.variable} ${lora.variable} ${kanit.variable}`}
+      >
         <main> {children}</main>
       </body>
     </html>

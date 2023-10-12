@@ -4,5 +4,4 @@ export const navbarLinks = [
   "Reviews",
   "Science",
   "Entertainment",
-  "More",
 ];

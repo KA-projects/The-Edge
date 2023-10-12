@@ -19,7 +19,9 @@ const Home = async () => {
   return (
     <div>
       <Navbar />
-      <Content news={dataNewsList[0]} />
+      <Content newsList={dataNewsList} />
+      <Content newsList={dataNewsList} />
+      <Content newsList={dataNewsList} />
       UnderLine
     </div>
   );
