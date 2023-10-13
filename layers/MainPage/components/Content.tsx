@@ -12,7 +12,10 @@ const Content = ({ newsList }: NewsListProps) => {
   const storyPackage = haveMoreFiveStories[0];
 
   return (
-    <div className="max-w-5xl relative mx-auto w-full flex flex-col mb-5 md:flex-row px-2">
+    <div
+      className="max-w-container-lg relative mx-auto mt-14 w-full
+     flex flex-col mb-5 md:flex-row px-2 lg:px-0"
+    >
       <HeroTitle newsContent={heroContent} />
       <HeroTopStories newsContent={storyPackage} />
     </div>

@@ -8,21 +8,29 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <div className=" max-w-5xl mx-auto w-full flex items-end h-[48px] px-5">
+    <div className=" max-w-container-lg mx-auto w-full flex items-end h-[48px] mt-8 px-5">
       <nav className="ml-auto pb-2 border-b text-sm md:text-base">
-        <ul>
+        <ul className="md:text-lg ">
           {navbarLinks.map((link) => (
-            <li className="hidden md:inline" key={link}>
-              <Link href={link === "The Edge" ? "/" : link.toLowerCase()}>
+            <li
+              className="hidden md:inline first-of-type:text-2xl first-of-type:font-semibold"
+              key={link}
+            >
+              <Link
+                className="hover:opacity-50 hover:transition-all"
+                href={link === "The Edge" ? "/" : link.toLowerCase()}
+              >
                 {link}
               </Link>
-              <span>/</span>
+              <span className="mx-4">/</span>
             </li>
           ))}
 
-          <li className="flex items-center">
-            <span className="hidden md:inline">More</span>
-            <span className="md:hidden">Menu</span>
+          <li className="flex items-center md:inline hover:opacity-50">
+            <span className="hidden md:inline font-medium">More</span>
+            <span className="md:hidden">
+              <span>Menu</span>
+            </span>
             <Image
               src="/plus.svg"
               width={20}

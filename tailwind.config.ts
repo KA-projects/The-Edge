@@ -17,6 +17,12 @@ const config: Config = {
         lora: ["var(--font-lora)"],
         kanit: ["var(--font-kanit)"],
       },
+      maxWidth: {
+        "container-lg": "1100px",
+      },
+      boxShadow: {
+        "highlight-blurple": "inset 0 -.5em 0 0 #5200ff",
+      },
     },
   },
   plugins: [],
