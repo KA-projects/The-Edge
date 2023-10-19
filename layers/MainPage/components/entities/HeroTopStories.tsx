@@ -7,18 +7,18 @@ import React from "react";
 import { extractTextUpToFirstComma } from "../../utils/stringMethods";
 import { formatDate } from "../../utils/dateMethods";
 import { useCommentsCount } from "../../utils/hooks/useCommentsCount";
+import Content from "../shared/Content";
 
 const HeroTopStories = ({ newsContent }: NewsProps) => {
   const newsStories = newsContent.stories.slice(0, 5);
-  const commentCount = useCommentsCount();
 
   return (
-    <div className="w-full h-full pt-8">
-      <h2 className="text-franklin mb-4">Top Stories</h2>
+    <div className="w-full h-full pt-8 lg:w-[380px]">
+      <h2 className="text-franklin max-w-lg mx-auto mb-4">Top Stories</h2>
       <ol>
         {newsStories.map((news, index) => (
           <li
-            className="group flex [&>div]:first-of-type:pt-0
+            className="group flex max-w-lg mx-auto [&>div]:first-of-type:pt-0
              [&>div]:last-of-type:pb-0 [&>div]:last-of-type:border-b-0 [&>div]:first-of-type:mt-0 "
             key={news.id}
           >
@@ -53,31 +53,11 @@ const HeroTopStories = ({ newsContent }: NewsProps) => {
                   </div>
                 </div>
                 {/* content  */}
-                <div className="md:pr-2">
-                  <h2 className="group-hover:underline group-hover:decoration-franklin text-xl font-oswald leading-5 font-bold">
-                    <Link href="/story-by-id"> {news.title} </Link>
-                  </h2>
-
-                  <div className="flex  md:flex-col md:items-start justify-between items-center pt-1 font-kanit text-[11px] tracking-widest uppercase">
-                    <div className="text-franklin hover:underline hover:decoration-franklin">
-                      {extractTextUpToFirstComma(news.byline)}{" "}
-                    </div>
-                    <div className="flex justify-end w-fit whitespace-nowrap items-center text-gray-64">
-                      <div>{formatDate(news.published, true)}</div>
-                      <span className="mx-2">|</span>
-                      <Image
-                        src="/message.svg"
-                        width={12}
-                        height={12}
-                        alt="message"
-                      />
-                      <span className="ml-1">
-                        {/* {Math.floor((news.wordCount / 15) * Math.random())} */}
-                        {commentCount}
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                <Content
+                  title={news.title}
+                  byline={news.byline}
+                  published={news.published}
+                />
               </div>
             </>
           </li>

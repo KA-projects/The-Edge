@@ -4,21 +4,21 @@ import { Inter, Oswald, Lora, Kanit } from "next/font/google";
 
 const oswald = Oswald({
   subsets: ["latin"],
-  weight: ["700", "200", "400"],
+  weight: ["700", "200", "400", "500"],
   display: "swap",
   variable: "--font-oswald",
 });
 
 const kanit = Kanit({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "700", "900", "100", "200", "300"],
   display: "swap",
   variable: "--font-kanit",
 });
 
 const lora = Lora({
   subsets: ["latin"],
-  weight: ["700", "400"],
+  weight: ["700", "400", "500", "600"],
   display: "swap",
   variable: "--font-lora",
 });

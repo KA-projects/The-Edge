@@ -1,10 +1,10 @@
 "use client";
 
 import { NewsListProps, NewsProps } from "@/data/types/NewsListProps";
-import HeroTitle from "./shared/HeroTitle";
-import HeroTopStories from "./shared/HeroTopStories";
+import HeroTitle from "./entities/HeroTitle";
+import HeroTopStories from "./entities/HeroTopStories";
 
-const Content = ({ newsList }: NewsListProps) => {
+const Hero = ({ newsList }: NewsListProps) => {
   const heroContent = newsList[0];
   const haveMoreFiveStories = newsList.filter(
     (news) => news.stories.length >= 5
@@ -14,12 +14,12 @@ const Content = ({ newsList }: NewsListProps) => {
   return (
     <div
       className="max-w-container-lg relative mx-auto mt-14 w-full
-     flex flex-col mb-5 md:flex-row px-2 lg:px-0"
+     flex flex-col mb-5 md:max-w-[560px] lg:max-w-container-lg lg:flex-row px-2 lg:px-0"
     >
-      <HeroTitle newsContent={heroContent} />
+      <HeroTitle newsContent={heroContent} isHero={true} />
       <HeroTopStories newsContent={storyPackage} />
     </div>
   );
 };
 
-export default Content;
+export default Hero;
