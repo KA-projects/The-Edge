@@ -13,6 +13,7 @@ import StoryListContainer from "@/layers/MainPage/components/shared/StoryListCon
 import StoryList from "@/layers/MainPage/components/cards/StoryList";
 import StoryPackage from "@/layers/MainPage/components/cards/StoryPackage";
 import HeroTitle from "@/layers/MainPage/components/entities/HeroTitle";
+import StoryListInnerContainer from "@/layers/MainPage/components/shared/StoryListInnerContainer";
 // import { fakeNewsDetail } from "@/data/fakeNewsDetail";
 
 const Home = async () => {
@@ -30,47 +31,78 @@ const Home = async () => {
     <div>
       <Navbar />
       <Hero newsList={dataNewsList} />
+      <div className="h-[400px] overflow-scroll m-auto border border-rose-400">
+        <div>23123132</div>
+        <div>23123132</div>
+        <div>23123132</div>
+        <div>23123132</div>
+        <div>23123132</div>
+        <div
+          style={{ position: "sticky", top: "0" }}
+          className=" sticky top-2 min-h-[40px] h-4 bg-slate-500"
+        >
+          123
+        </div>
+        <div>5555555</div>
+        <div className="h-[2000px]">23123132</div>
+        <div>5555555</div>
+        <div>5555555</div>
+        <div>5555555</div>
+        <div>5555555</div>
+        <div>5555555</div>
+      </div>
       <StoryListContainer>
         <Border />
-        <StoryPackage story={haveMoreFiveStories[1]} />
 
-        <StoryList
-          title="most popular"
-          bgColor="bg-blurpre/90"
-          textColor="text-white"
-          borderColor="border-b-franklin"
-          bgIndexColor="bg-black/50"
-          textIndexColor="text-white"
-          story={haveMoreFiveStories[3]}
-        />
-
-        <Border />
-
-        <HeroTitle newsContent={haveMoreFiveStories[1]} isHero={false} />
-        <StoryPackage story={haveMoreFiveStories[4]} />
-        <StoryList
-          title="just for you"
-          bgColor="bg-franklin/90"
-          textColor="text-black"
-          borderColor="border-b-blurpre"
-          bgIndexColor="bg-blurpre"
-          textIndexColor="text-franklin"
-          story={haveMoreFiveStories[2]}
-        />
+        <StoryListInnerContainer>
+          <StoryPackage story={haveMoreFiveStories[1]} storyForHero={null} />
+          <div className="flex-1 flex flex-col self-stretch">
+            <StoryList
+              title="most popular"
+              bgColor="bg-blurpre/90"
+              textColor="text-white"
+              borderColor="border-b-franklin"
+              bgIndexColor="bg-black/50"
+              textIndexColor="text-white"
+              story={haveMoreFiveStories[3]}
+            />
+          </div>
+        </StoryListInnerContainer>
 
         <Border />
 
-        <HeroTitle newsContent={haveMoreFiveStories[2]} isHero={false} />
-        <StoryPackage story={haveMoreFiveStories[2]} />
-        <StoryList
-          title="podcasts"
-          bgColor="bg-pernod/90"
-          textColor="text-black"
-          borderColor="border-b-black"
-          bgIndexColor="bg-black"
-          textIndexColor="text-white"
-          story={haveMoreFiveStories[4]}
-        />
+        <StoryListInnerContainer>
+          <StoryPackage
+            story={haveMoreFiveStories[4]}
+            storyForHero={haveMoreFiveStories[4]}
+          />
+          <StoryList
+            title="just for you"
+            bgColor="bg-franklin/90"
+            textColor="text-black"
+            borderColor="border-b-blurpre"
+            bgIndexColor="bg-blurpre"
+            textIndexColor="text-franklin"
+            story={haveMoreFiveStories[2]}
+          />
+        </StoryListInnerContainer>
+        <Border />
+
+        <StoryListInnerContainer>
+          <StoryPackage
+            story={haveMoreFiveStories[2]}
+            storyForHero={haveMoreFiveStories[2]}
+          />
+          <StoryList
+            title="podcasts"
+            bgColor="bg-pernod/90"
+            textColor="text-black"
+            borderColor="border-b-black"
+            bgIndexColor="bg-black"
+            textIndexColor="text-white"
+            story={haveMoreFiveStories[4]}
+          />
+        </StoryListInnerContainer>
       </StoryListContainer>
       <Border />
       <Border />

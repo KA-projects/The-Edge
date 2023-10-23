@@ -17,8 +17,8 @@ const Content = ({ title, byline, published }: ContentProps) => {
   const commentCount = useCommentsCount();
 
   return (
-    <div className="md:pr-2">
-      <h2 className="group-hover:underline group-hover:decoration-franklin text-xl font-oswald leading-5 font-bold">
+    <div className="md:pr-2 max-w-content-block-compact">
+      <h2 className="group-hover:underline group-hover:decoration-franklin text-2xl font-kanit leading-6 font-bold">
         <Link href="/story-by-id"> {title} </Link>
       </h2>
 

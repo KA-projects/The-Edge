@@ -13,11 +13,11 @@ const Navbar = () => {
         <ul className="md:text-lg ">
           {navbarLinks.map((link) => (
             <li
-              className="hidden md:inline first-of-type:text-2xl first-of-type:font-semibold"
+              className="hidden md:inline [&>a]:first-of-type:text-2xl [&>a]:first-of-type:font-semibold"
               key={link}
             >
               <Link
-                className="hover:opacity-50 hover:transition-all"
+                className="hover:opacity-50 hover:transition-all "
                 href={link === "The Edge" ? "/" : link.toLowerCase()}
               >
                 {link}

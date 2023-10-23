@@ -22,25 +22,38 @@ const StoryList = ({
   borderColor,
   bgIndexColor,
   textIndexColor,
-}: StoryListProps & StoryProps) => {
+}: StoryListProps & Pick<StoryProps, "story">) => {
   const stories = story.stories;
 
   return (
-    <div className={`max-w-full font-kanit ${textColor}`}>
+    <div
+      className={`max-w-full sticky top-0 left-0 font-kanit ${textColor}  rounded  md:max-w-container-sm lg:rounded-3xl `}
+    >
       <div
-        className={`relative ${bgColor} w-mobile-breaker mt-20 ml-16 p-5 min-h-[475px] rounded`}
+        className={`relative  lg:overflow-hidden  ${bgColor} w-mobile-breaker md:w-tablet-breaker lg:w-[500px]
+           mt-20 ml-16 p-5 min-h-[475px]  lg:ml-0 lg:mt-0
+           rounded lg:rounded-3xl`}
       >
         <h2
           style={{ writingMode: "vertical-rl", textOrientation: "sideways" }}
-          className="absolute -left-14 -top-5 -z-10  rotate-180 text-white text-7xl capitalize font-oswald font-bold"
+          className="absolute -left-14 -top-5 -z-10  rotate-180
+           text-white text-7xl capitalize font-oswald font-bold  lg:hidden"
         >
           {title}
         </h2>
 
-        <h3 className=" text-xs font-kanit  font-medium  mb-1 uppercase">
+        <h2
+          style={{ writingMode: "vertical-rl", textOrientation: "sideways" }}
+          className="hidden lg:block absolute bottom-1 -right-1 z-10  rotate-180
+          text-[118px] whitespace-pre leading-none capitalize font-oswald font-bold text-blurpre-39"
+        >
+          {title}
+        </h2>
+
+        <h3 className="text-xs font-kanit  font-medium  mb-1 uppercase">
           {title}
         </h3>
-        <ol>
+        <ol className="w-[320px]">
           {stories.slice(0, 5).map((story, index) => (
             <li
               key={story.id}
