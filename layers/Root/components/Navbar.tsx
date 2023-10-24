@@ -2,14 +2,15 @@
 
 import React from "react";
 import styles from "../styles/Navbar.module.scss";
-import { navbarLinks } from "../constants";
+import { navbarLinks } from "../../MainPage/constants";
 import Link from "next/link";
 import Image from "next/image";
+import { fakeNewsDetail } from "@/data/fakeNewsDetail";
 
-const Navbar = () => {
+const MainNavbar = () => {
   return (
-    <div className=" max-w-container-lg mx-auto w-full flex items-end h-[48px] mt-8 px-5">
-      <nav className="ml-auto pb-2 border-b text-sm md:text-base">
+    <div className="max-w-container-lg mx-auto w-full flex items-end h-[48px] px-5">
+      <nav className="ml-auto pb-2 border-b text-sm  md:text-base">
         <ul className="md:text-lg ">
           {navbarLinks.map((link) => (
             <li
@@ -45,4 +46,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default MainNavbar;

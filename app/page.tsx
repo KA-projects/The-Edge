@@ -1,7 +1,7 @@
 import React from "react";
 
 import Hero from "@/layers/MainPage/components/Hero";
-import Navbar from "@/layers/MainPage/components/Navbar";
+import MainNavbar from "@/layers/Root/components/Navbar";
 
 // import { fetchNewsDetailByInternalID, fetchNewsList } from "@/data/fetchData";
 
@@ -28,45 +28,28 @@ const Home = async () => {
   );
 
   return (
-    <div>
-      <Navbar />
+    <main>
+      <MainNavbar />
       <Hero newsList={dataNewsList} />
-      <div className="h-[400px] overflow-scroll m-auto border border-rose-400">
-        <div>23123132</div>
-        <div>23123132</div>
-        <div>23123132</div>
-        <div>23123132</div>
-        <div>23123132</div>
-        <div
-          style={{ position: "sticky", top: "0" }}
-          className=" sticky top-2 min-h-[40px] h-4 bg-slate-500"
-        >
-          123
-        </div>
-        <div>5555555</div>
-        <div className="h-[2000px]">23123132</div>
-        <div>5555555</div>
-        <div>5555555</div>
-        <div>5555555</div>
-        <div>5555555</div>
-        <div>5555555</div>
-      </div>
+
       <StoryListContainer>
         <Border />
-
         <StoryListInnerContainer>
-          <StoryPackage story={haveMoreFiveStories[1]} storyForHero={null} />
-          <div className="flex-1 flex flex-col self-stretch">
-            <StoryList
-              title="most popular"
-              bgColor="bg-blurpre/90"
-              textColor="text-white"
-              borderColor="border-b-franklin"
-              bgIndexColor="bg-black/50"
-              textIndexColor="text-white"
-              story={haveMoreFiveStories[3]}
-            />
-          </div>
+          <StoryPackage
+            story={haveMoreFiveStories[1]}
+            storyForHero={null}
+            isHero={true}
+          />
+
+          <StoryList
+            title="most popular"
+            bgColor="bg-blurpre/90"
+            textColor="text-white"
+            borderColor="border-b-franklin"
+            bgIndexColor="bg-black/50"
+            textIndexColor="text-white"
+            story={haveMoreFiveStories[3]}
+          />
         </StoryListInnerContainer>
 
         <Border />
@@ -75,6 +58,7 @@ const Home = async () => {
           <StoryPackage
             story={haveMoreFiveStories[4]}
             storyForHero={haveMoreFiveStories[4]}
+            isHero={false}
           />
           <StoryList
             title="just for you"
@@ -92,6 +76,7 @@ const Home = async () => {
           <StoryPackage
             story={haveMoreFiveStories[2]}
             storyForHero={haveMoreFiveStories[2]}
+            isHero={false}
           />
           <StoryList
             title="podcasts"
@@ -108,7 +93,7 @@ const Home = async () => {
       <Border />
       <Border />
       <Border />
-    </div>
+    </main>
   );
 };
 

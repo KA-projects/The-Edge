@@ -3,11 +3,15 @@ import React from "react";
 import Story from "./Story";
 import HeroTitle from "../entities/HeroTitle";
 
-const StoryPackage = ({ story, storyForHero }: StoryProps) => {
+const StoryPackage = ({
+  story,
+  storyForHero,
+  isHero,
+}: StoryProps & { isHero: boolean }) => {
   return (
-    <div>
+    <div className="">
       {storyForHero === null ? null : (
-        <HeroTitle newsContent={storyForHero} isHero={false} />
+        <HeroTitle newsContent={storyForHero} isHero={isHero} />
       )}
 
       <ol className=" md:max-w-container-sm mx-auto  lg:mr-24">

@@ -27,10 +27,10 @@ const StoryList = ({
 
   return (
     <div
-      className={`max-w-full sticky top-0 left-0 font-kanit ${textColor}  rounded  md:max-w-container-sm lg:rounded-3xl `}
+      className={`max-w-full sticky top-10 font-kanit ${textColor}  rounded  md:max-w-container-sm lg:rounded-3xl `}
     >
       <div
-        className={`relative  lg:overflow-hidden  ${bgColor} w-mobile-breaker md:w-tablet-breaker lg:w-[500px]
+        className={`relative  lg:overflow-hidden  ${bgColor} w-mobile-breaker sm:w-tablet-breaker lg:w-[500px]
            mt-20 ml-16 p-5 min-h-[475px]  lg:ml-0 lg:mt-0
            rounded lg:rounded-3xl`}
       >
@@ -53,7 +53,8 @@ const StoryList = ({
         <h3 className="text-xs font-kanit  font-medium  mb-1 uppercase">
           {title}
         </h3>
-        <ol className="w-[320px]">
+
+        <ol className=" lg:w-[320px]">
           {stories.slice(0, 5).map((story, index) => (
             <li
               key={story.id}

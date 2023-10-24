@@ -6,7 +6,7 @@ const StoryListInnerContainer = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="flex w-full flex-col items-center lg:flex-row lg:items-start">
+    <div className="flex relative w-full flex-col items-center lg:flex-row lg:items-start">
       {children}
     </div>
   );

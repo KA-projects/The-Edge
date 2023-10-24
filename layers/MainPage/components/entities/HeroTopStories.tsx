@@ -43,7 +43,10 @@ const HeroTopStories = ({ newsContent }: NewsProps) => {
                       {index + 1}
                     </div>
 
-                    <Link className="w-full h-full block" href="story-by-id">
+                    <Link
+                      className="w-full h-full block"
+                      href={`/news/${news.internalID}`}
+                    >
                       <Image
                         src={news.thumbnailImage || "/no-image.png"}
                         alt={news.title}
@@ -60,6 +63,7 @@ const HeroTopStories = ({ newsContent }: NewsProps) => {
                   title={news.title}
                   byline={news.byline}
                   published={news.published}
+                  internalID={news.internalID}
                 />
               </div>
             </>

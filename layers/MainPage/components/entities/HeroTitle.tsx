@@ -8,28 +8,33 @@ import { formatDate } from "../../utils/dateMethods";
 import { useCommentsCount } from "../../utils/hooks/useCommentsCount";
 
 type isHero = {
-  isHero:boolean
-}
+  isHero: boolean;
+};
 
-const HeroTitle = ({ newsContent,isHero }: NewsProps& isHero) => {
+const HeroTitle = ({ newsContent, isHero }: NewsProps & isHero) => {
   const news = newsContent.stories[0];
   const commentCount = useCommentsCount();
 
   return (
-    <div className="group w-full lg:w-[710px] pt-8 shrink-0">
-
-      {isHero  ? (<div
-        className="text-6xl z-[2] font-semibold absolute top-0 drop-shadow-2xl 
+    <div
+      className={`group w-full ${
+        isHero ? "lg:w-[710px]" : "lg:w-full"
+      } lg:w-[710px] pt-8 shrink-0`}
+    >
+      {isHero ? (
+        <div
+          className="text-6xl z-[2] font-semibold absolute top-0 drop-shadow-2xl 
       lg:-rotate-90 lg:text-9xl lg:-left-80 lg:top-64"
-      >
-        The Edge
-      </div>) : null}
-      
+        >
+          The Edge
+        </div>
+      ) : null}
 
       <div className="ml-10 md:ml-0 lg:mr-24 lg:ml-4  ">
         <div className="w-full h-full ">
           <Link
-            href={`url-for-content`}
+            // href={`/news/${news.internalID}`}
+            href={`/news/S2A5AWT1UM0W01`}
             className="block w-full h-full  relative min-h-full max-w-full max-h-[464px]"
             tabIndex={1}
             aria-hidden
@@ -56,14 +61,19 @@ const HeroTitle = ({ newsContent,isHero }: NewsProps& isHero) => {
         </div>
       </div>
 
-      <div className="relative border-b  -top-5 border-gray-31 pb-5 lg:pl-40 lg:pr-20">
+      <div
+        className={`relative border-b  -top-5 border-gray-31 pb-5 ${
+          isHero ? "lg:pl-40 lg:pr-20" : "lg:pl-16 lg:pr-24"
+        } `}
+      >
         <div className="">
           <h2
             className={`text-5xl mb-4 font-oswald font-bold leading-[.9] tracking-tight`}
           >
             <Link
               className="group-hover:shadow-highlight-blurple"
-              href="/hero-story-by-id"
+              // href={`/news/${news.internalID}`}
+              href={`/news/S2A5AWT1UM0W01`}
             >
               {" "}
               {news.title}

@@ -40,7 +40,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${oswald.variable} ${lora.variable} ${kanit.variable}`}
       >
-        <main> {children}</main>
+        <div> {children}</div>
       </body>
     </html>
   );

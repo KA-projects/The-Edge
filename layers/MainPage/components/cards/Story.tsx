@@ -25,6 +25,7 @@ const Story = ({ singleStory }: SingleStory) => {
             title={singleStory.title}
             byline={singleStory.byline}
             published={singleStory.published}
+            internalID={singleStory.internalID}
           />
         </div>
       </div>
