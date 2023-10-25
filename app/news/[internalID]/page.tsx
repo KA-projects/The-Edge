@@ -1,8 +1,8 @@
 import { fakeNewsDetail } from "@/data/fakeNewsDetail";
 import { fetchNewsDetailByInternalID } from "@/data/fetchData";
-import NavbarOfNewsDetail from "@/layers/NewsDetail/components/NavbarOfNewsDetail";
+import NavbarOfNewsDetail from "@/layers/NewsDetail/components/shared/NavbarOfNewsDetail";
 
-import NewsDetail from "@/layers/NewsDetail/components/NewsDetail";
+import NewsDetail from "@/layers/NewsDetail/components/entities/NewsDetail";
 
 import React from "react";
 
@@ -11,9 +11,9 @@ const Page = ({ params }: { params: { internalID: string } }) => {
   // const newsDetail = fetchNewsDetailByInternalID(params.internalID)
 
   return (
-    <div style={{ colorScheme: "light" }}>
+    <div>
       <NavbarOfNewsDetail />
-      <main>
+      <main className="px-5">
         <NewsDetail newsDetail={fakeNewsDetail} />
       </main>
     </div>

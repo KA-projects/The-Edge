@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${oswald.variable} ${lora.variable} ${kanit.variable}`}
+        className={`${inter.className} ${oswald.variable} ${lora.variable} ${kanit.variable} dark dark-mode`}
       >
         <div> {children}</div>
       </body>

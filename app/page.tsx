@@ -1,7 +1,7 @@
 import React from "react";
 
 import Hero from "@/layers/MainPage/components/Hero";
-import MainNavbar from "@/layers/Root/components/Navbar";
+import MainNavbar from "@/layers/Root/components/MainNavbar";
 
 // import { fetchNewsDetailByInternalID, fetchNewsList } from "@/data/fetchData";
 
