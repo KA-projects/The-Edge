@@ -2,6 +2,11 @@ import { formatDate } from "@/layers/MainPage/utils/dateMethods";
 import Image from "next/image";
 import React, { useState } from "react";
 import CopyIconSVG from "../icons/CopyIconSVG";
+import {
+  DetailComponents,
+  LedeImageType,
+  NewsDetailProps,
+} from "@/data/types/NewsDetail";
 
 type NewsDetailHeroProps = {
   title: string;
@@ -15,7 +20,9 @@ const NewsDetailHero = ({
   summary,
   byline,
   published,
-}: NewsDetailHeroProps) => {
+  ledeImage,
+  
+}: NewsDetailHeroProps & LedeImageType ) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -26,7 +33,7 @@ const NewsDetailHero = ({
 
   return (
     <div className="flex flex-col mt-4 relative">
-      <div className="bg-pernod absolute bottom-0 -left-[6%] w-screen h-[1000px] -z-20"></div>
+      <div className="bg-pernod absolute bottom-72 -left-[6%] w-screen h-[1000px] -z-20"></div>
       {/* title block*/}
       <div>
         <div className="mb-4">
@@ -61,16 +68,35 @@ const NewsDetailHero = ({
                 Copied!
               </span>
             ) : null}
-            {copied ? (
-              <span className="font-medium font-kanit text-sm ml-2">
-                Copied!
-              </span>
-            ) : null}
           </button>
         </div>
       </div>
       {/* photo  block*/}
-      <div>Photo</div>
+      <div className="">
+        <div className="image-container">
+          <div className="relative">
+            <span className="image-background"></span>
+            <Image
+              src={ledeImage.imageURLs.default}
+              width={320}
+              height={320}
+              className="image"
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+              alt="illustration"
+            />
+          </div>
+        </div>
+
+        <div className="font-kanit font-light text-sm">
+          <figcaption className=" italic inline text-gray-13">
+            {ledeImage.caption}{" "}
+          </figcaption>
+          <cite className="text-gray-63 inline">{ledeImage.credit} </cite>
+        </div>
+      </div>
     </div>
   );
 };
