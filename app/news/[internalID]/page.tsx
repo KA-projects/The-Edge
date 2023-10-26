@@ -8,13 +8,14 @@ import React from "react";
 
 const Page = ({ params }: { params: { internalID: string } }) => {
   // fetch data by internalID from Rapid API
-  // const newsDetail = fetchNewsDetailByInternalID(params.internalID)
+  // const newsDetail = fetchNewsDetailByInternalID(params.internalID);
 
   return (
     <div>
       <NavbarOfNewsDetail />
       <main className="px-5">
         <NewsDetail newsDetail={fakeNewsDetail} />
+        <div className="bg-red-500 h-[500px]"> footer</div>
       </main>
     </div>
   );

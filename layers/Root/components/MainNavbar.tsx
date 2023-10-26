@@ -10,7 +10,6 @@ const MainNavbar = () => {
   const pathname = usePathname();
 
   const isDark = pathname === "/";
-  console.log("isDark : ", isDark);
 
   useEffect(() => {
     if (isDark) {
