@@ -61,6 +61,11 @@ const NewsDetailHero = ({
                 Copied!
               </span>
             ) : null}
+            {copied ? (
+              <span className="font-medium font-kanit text-sm ml-2">
+                Copied!
+              </span>
+            ) : null}
           </button>
         </div>
       </div>
