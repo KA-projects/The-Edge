@@ -2,11 +2,7 @@ import { formatDate } from "@/layers/MainPage/utils/dateMethods";
 import Image from "next/image";
 import React, { useState } from "react";
 import CopyIconSVG from "../icons/CopyIconSVG";
-import {
-  DetailComponents,
-  LedeImageType,
-  NewsDetailProps,
-} from "@/data/types/NewsDetail";
+import { LedeImageType } from "@/data/types/NewsDetail";
 
 type NewsDetailHeroProps = {
   title: string;
@@ -21,8 +17,7 @@ const NewsDetailHero = ({
   byline,
   published,
   ledeImage,
-  
-}: NewsDetailHeroProps & LedeImageType ) => {
+}: NewsDetailHeroProps & LedeImageType) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {

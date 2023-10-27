@@ -1,14 +1,30 @@
 "use client";
 
-import { DetailComponents, NewsDetailProps } from "@/data/types/NewsDetail";
+import { NewsDetailProps } from "@/data/types/NewsDetail";
 import React, { useEffect } from "react";
 import NewsDetailHero from "./NewsDetailHero";
 import { fetchNewsDetailByInternalID } from "@/data/fetchData";
+import Image from "next/image";
+import TextContent from "../shared/TextContent";
+import ImageContent from "../shared/ImageContent";
+import { DetailComponents, ImagePart, TextPart, WebviewPart } from "../types";
 
 const NewsDetail = ({ newsDetail }: NewsDetailProps) => {
-  console.log(newsDetail);
-  //@ts-ignore
-  const components: DetailComponents = newsDetail.components;
+  // console.log(newsDetail);
+
+  const components = newsDetail.components as DetailComponents[];
+
+  const isText = (
+    detailComponents: DetailComponents
+  ): detailComponents is TextPart => {
+    return detailComponents.role === "p" || detailComponents.role === "h2";
+  };
+
+  const isImage = (
+    detailComponents: DetailComponents
+  ): detailComponents is ImagePart => {
+    return detailComponents.role === "image";
+  };
 
   return (
     <div>
@@ -21,44 +37,29 @@ const NewsDetail = ({ newsDetail }: NewsDetailProps) => {
       />
 
       <div className="font-lora">
-        {components.map(({ role, parts }, index) => {
-          if (role === "h2") {
+        {components.map((component, index) => {
+          if (isText(component)) {
             return (
-              <div className="pt-4" key={parts[0].text + role}>
-                <div className="w-[65px] h-[22px] bg-franklin"></div>
-                <h2 className="text-3xl font-bold mt-2 mb-4">
-                  {parts.map((part) => (
-                    <>{part.text} </>
-                  ))}
-                </h2>
-              </div>
+              <TextContent
+                key={component.parts[0].text + index}
+                role={component.role}
+                parts={component.parts}
+                index={index}
+              />
             );
           }
-          if (role === "p") {
+
+          if (isImage(component)) {
             return (
-              <p
-                className={`my-4 ${
-                  index === 0 || index === 1 ? "text-[22px]" : " text-lg"
-                }`}
-                key={parts[0].text + role}
-              >
-                {parts.map((part) => (
-                  <>
-                    {index === 0 ? (
-                      <>
-                        <span className="text-6xl font-bold">
-                          {part.text?.charAt(0)}
-                        </span>
-                        <span className="">{part.text?.slice(1)}</span>
-                      </>
-                    ) : (
-                      part.text
-                    )}
-                  </>
-                ))}
-              </p>
+              <ImageContent
+                key={component.id}
+                id={component.id}
+                imageURLs={component.imageURLs}
+              />
             );
           }
+
+          return null;
         })}
       </div>
     </div>
