@@ -28,6 +28,7 @@ const config: Config = {
         "content-block-compact": "320px",
         "container-sm": "500px",
         "container-md": "700px",
+        "article-body": "600px",
       },
       width: {
         "mobile-breaker": "300px",

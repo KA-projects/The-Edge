@@ -9,7 +9,7 @@ const LogoSVG = () => {
       viewBox="210 60 100 70"
       style={{ background: "rgba(0, 0, 0, 0)" }}
       preserveAspectRatio="xMidYMid"
-      className="absolute z-0 top-0 left-0 md:left-[-180px] h-[64px] w-[300px] md:h-[174px] md:w-[778px] text-6xl"
+      className="absolute z-0 top-0 left-0 md:left-[-180px] h-[64px] w-[300px] md:h-[174px] md:w-[850px] text-6xl"
     >
       <g>
         <g transform="translate(83.76502227783203, 106.36000061035156)">

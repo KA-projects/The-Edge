@@ -27,10 +27,11 @@ const NewsDetailHero = ({
   };
 
   return (
-    <div className="flex flex-col mt-4 relative">
-      <div className="bg-pernod absolute bottom-72 left-[50%] ml-[calc(-1*calc(100vw-15px)/2)]  w-[calc(100vw-15px)] h-[1000px] -z-20"></div>
+    <div className="flex flex-col mt-4 lg:pb-16 relative lg:flex-row-reverse">
+      {/* background */}
+      <div className="bg-pernod absolute bottom-72 lg:bottom-0 left-[50%] ml-[calc(-1*calc(100vw-15px)/2)]  w-[calc(100vw-15px)] h-[1000px] -z-20"></div>
       {/* title block*/}
-      <div>
+      <div className="lg:w-1/2 lg:pl-10">
         <div className="mb-4">
           <div className="font-semibold">TODO category</div>
           <h1
@@ -39,10 +40,10 @@ const NewsDetailHero = ({
           >
             {title}
           </h1>
-          <h2 className="text-xl font-oswald font-medium">{summary}</h2>
+          <h2 className="text-2xl font-oswald">{summary}</h2>
         </div>
 
-        <div className="mb-2 text-xs font-kanit">
+        <div className="mb-2 lg:mb-4 text-xs font-kanit">
           <div>
             By <span className="font-bold">{byline}</span>
           </div>
@@ -68,7 +69,7 @@ const NewsDetailHero = ({
       </div>
       {/* photo  block*/}
       {ledeImage ? (
-        <div className="">
+        <div className="lg:w-1/2">
           <div className="image-container">
             <div className="relative">
               <span className="image-background"></span>
@@ -81,7 +82,7 @@ const NewsDetailHero = ({
                   width: "100%",
                   height: "auto",
                 }}
-                sizes="(max-width:768px) 100vw,(max-width:1200px) 700px, 550px"
+                sizes="(max-width:768px) 100vw,(max-width:1200px) 700px, 800px"
                 alt="illustration"
               />
             </div>

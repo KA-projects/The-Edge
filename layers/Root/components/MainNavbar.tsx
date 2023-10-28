@@ -22,8 +22,8 @@ const MainNavbar = () => {
   }, [pathname, isDark]);
 
   return (
-    <div className="max-w-container-lg mx-auto w-full flex items-end h-[48px] md:h-[80px] md:mb-20 px-5">
-      <nav className="ml-auto pb-2 border-b border-b-black dark:border-white text-sm text-black dark:text-white md:text-base">
+    <div className="max-w-container-lg mx-auto w-full flex items-end h-[48px] md:h-[80px] px-5">
+      <nav className="ml-auto z-10 pb-2 border-b border-b-black dark:border-white text-sm text-black dark:text-white md:text-base">
         <ul className="md:text-xl ">
           {navbarLinks.map((link) => (
             <li

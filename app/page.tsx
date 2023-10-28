@@ -10,7 +10,7 @@ import { fakeNewsList } from "@/data/fakeNewsList";
 import Border from "@/layers/MainPage/components/shared/Border";
 import Story from "@/layers/MainPage/components/cards/Story";
 import StoryListContainer from "@/layers/MainPage/components/shared/StoryListContainer";
-import StoryList from "@/layers/MainPage/components/cards/StoryList";
+import StickyStoryList from "@/layers/MainPage/components/cards/StickyStoryList";
 import StoryPackage from "@/layers/MainPage/components/cards/StoryPackage";
 import HeroTitle from "@/layers/MainPage/components/entities/HeroTitle";
 import StoryListInnerContainer from "@/layers/MainPage/components/shared/StoryListInnerContainer";
@@ -41,7 +41,7 @@ const Home = async () => {
             isHero={true}
           />
 
-          <StoryList
+          <StickyStoryList
             title="most popular"
             bgColor="bg-blurpre/90"
             textColor="text-white"
@@ -49,6 +49,7 @@ const Home = async () => {
             bgIndexColor="bg-black/50"
             textIndexColor="text-white"
             story={haveMoreFiveStories[3]}
+            isLocatedOnNewsDetailPage={false}
           />
         </StoryListInnerContainer>
 
@@ -60,7 +61,7 @@ const Home = async () => {
             storyForHero={haveMoreFiveStories[4]}
             isHero={false}
           />
-          <StoryList
+          <StickyStoryList
             title="just for you"
             bgColor="bg-franklin/90"
             textColor="text-black"
@@ -68,6 +69,7 @@ const Home = async () => {
             bgIndexColor="bg-blurpre"
             textIndexColor="text-franklin"
             story={haveMoreFiveStories[2]}
+            isLocatedOnNewsDetailPage={false}
           />
         </StoryListInnerContainer>
         <Border />
@@ -78,7 +80,7 @@ const Home = async () => {
             storyForHero={haveMoreFiveStories[2]}
             isHero={false}
           />
-          <StoryList
+          <StickyStoryList
             title="podcasts"
             bgColor="bg-pernod/90"
             textColor="text-black"
@@ -86,6 +88,7 @@ const Home = async () => {
             bgIndexColor="bg-black"
             textIndexColor="text-white"
             story={haveMoreFiveStories[4]}
+            isLocatedOnNewsDetailPage={false}
           />
         </StoryListInnerContainer>
       </StoryListContainer>
