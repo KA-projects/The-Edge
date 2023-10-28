@@ -6,10 +6,12 @@ import NewsDetail from "@/layers/NewsDetail/components/entities/NewsDetail";
 
 import React from "react";
 import { fakeNewsDetailTwo } from "@/data/fakeNewsDetailTwo";
+import { NewsDetailProps } from "@/data/types/NewsDetail";
 
-const Page = ({ params }: { params: { internalID: string } }) => {
+const Page = async ({ params }: { params: { internalID: string } }) => {
   // fetch data by internalID from Rapid API
-  // const newsDetail = fetchNewsDetailByInternalID(params.internalID);
+  // const newsDetail: NewsDetailProps["newsDetail"] =
+  //   await fetchNewsDetailByInternalID(params.internalID);
 
   return (
     <div>

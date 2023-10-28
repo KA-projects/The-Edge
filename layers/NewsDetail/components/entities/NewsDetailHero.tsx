@@ -28,7 +28,7 @@ const NewsDetailHero = ({
 
   return (
     <div className="flex flex-col mt-4 relative">
-      <div className="bg-pernod absolute bottom-72 -left-[6%] w-screen h-[1000px] -z-20"></div>
+      <div className="bg-pernod absolute bottom-72 left-[50%] ml-[calc(-1*calc(100vw-15px)/2)]  w-[calc(100vw-15px)] h-[1000px] -z-20"></div>
       {/* title block*/}
       <div>
         <div className="mb-4">
@@ -39,7 +39,7 @@ const NewsDetailHero = ({
           >
             {title}
           </h1>
-          <h2 className="text-xl font-oswald font-light">{summary}</h2>
+          <h2 className="text-xl font-oswald font-medium">{summary}</h2>
         </div>
 
         <div className="mb-2 text-xs font-kanit">
@@ -67,31 +67,34 @@ const NewsDetailHero = ({
         </div>
       </div>
       {/* photo  block*/}
-      <div className="">
-        <div className="image-container">
-          <div className="relative">
-            <span className="image-background"></span>
-            <Image
-              src={ledeImage.imageURLs.default}
-              width={320}
-              height={320}
-              className="image"
-              style={{
-                width: "100%",
-                height: "auto",
-              }}
-              alt="illustration"
-            />
+      {ledeImage ? (
+        <div className="">
+          <div className="image-container">
+            <div className="relative">
+              <span className="image-background"></span>
+              <Image
+                src={ledeImage.imageURLs.large}
+                width={320}
+                height={320}
+                className="image"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
+                sizes="(max-width:768px) 100vw,(max-width:1200px) 700px, 550px"
+                alt="illustration"
+              />
+            </div>
+          </div>
+
+          <div className="font-kanit font-light text-sm">
+            <figcaption className=" italic inline text-gray-13">
+              {ledeImage.caption}{" "}
+            </figcaption>
+            <cite className="text-gray-63 inline">{ledeImage.credit} </cite>
           </div>
         </div>
-
-        <div className="font-kanit font-light text-sm">
-          <figcaption className=" italic inline text-gray-13">
-            {ledeImage.caption}{" "}
-          </figcaption>
-          <cite className="text-gray-63 inline">{ledeImage.credit} </cite>
-        </div>
-      </div>
+      ) : null}
     </div>
   );
 };

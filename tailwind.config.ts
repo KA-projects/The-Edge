@@ -27,6 +27,7 @@ const config: Config = {
         "container-lg": "1100px",
         "content-block-compact": "320px",
         "container-sm": "500px",
+        "container-md": "700px",
       },
       width: {
         "mobile-breaker": "300px",
@@ -34,6 +35,8 @@ const config: Config = {
       },
       boxShadow: {
         "highlight-blurple": "inset 0 -.5em 0 0 #5200ff",
+        "highlight-franklin": "inset 0 -.5em 0 0 #3cffd0",
+        "underline-black": "inset 0 -1px 0 0 #000",
       },
     },
   },

@@ -1,22 +1,16 @@
 import MainNavbar from "@/layers/Root/components/MainNavbar";
 import Link from "next/link";
 import React from "react";
+import LogoSVG from "../icons/LogoSVG";
 
 const NavbarOfNewsDetail = () => {
   return (
-    <header className="flex h-[3rem]">
-      <div className="w-[70%] relative">
-        <div className="absolute -top-2 -left-3 whitespace-pre">
-          <Link
-            className="hover:opacity-50 hover:transition-all text-6xl font-bold text-white"
-            href="/"
-          >
-            The Edge
-          </Link>
-        </div>
-      </div>
+    <header className="relative">
+      <div className="h-[3rem] md:h-[5rem]">
+        <Link href="/">
+          <LogoSVG />
+        </Link>
 
-      <div>
         <MainNavbar />
       </div>
     </header>

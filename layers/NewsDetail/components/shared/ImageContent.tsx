@@ -5,7 +5,19 @@ import { ImagePart } from "../types";
 const ImageContent = ({ id, imageURLs }: Omit<ImagePart, "role">) => {
   return (
     <div className="relative">
-      <Image src={imageURLs.default} alt="image" width={600} height={400} />
+      <Image
+        src={imageURLs.large}
+        alt="image"
+        style={{
+          width: "100%",
+          height: "auto",
+          maxWidth: "100%",
+          objectFit: "cover",
+        }}
+        sizes="(max-width:786px) 100vw,700px"
+        width={600}
+        height={400}
+      />
     </div>
   );
 };

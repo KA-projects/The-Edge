@@ -10,9 +10,9 @@ import ImageContent from "../shared/ImageContent";
 import { DetailComponents, ImagePart, TextPart, WebviewPart } from "../types";
 
 const NewsDetail = ({ newsDetail }: NewsDetailProps) => {
-  // console.log(newsDetail);
-
-  const components = newsDetail.components as DetailComponents[];
+  console.log(newsDetail);
+  //@ts-ignore
+  const components: DetailComponents[] = newsDetail.components;
 
   const isText = (
     detailComponents: DetailComponents
@@ -26,8 +26,20 @@ const NewsDetail = ({ newsDetail }: NewsDetailProps) => {
     return detailComponents.role === "image";
   };
 
+  const isWebView = (
+    detailComponents: DetailComponents
+  ): detailComponents is WebviewPart => {
+    return detailComponents.role === "webview";
+  };
+
+  const htmlParser = (xmlString: string) => {
+    // const doc = new DOMParser().parseFromString(xmlString, "text/html");
+
+    return <div dangerouslySetInnerHTML={{ __html: xmlString }}></div>;
+  };
+
   return (
-    <div>
+    <div className="mx-auto md:max-w-container-md">
       <NewsDetailHero
         title={newsDetail.title}
         summary={newsDetail.summary}
@@ -38,6 +50,17 @@ const NewsDetail = ({ newsDetail }: NewsDetailProps) => {
 
       <div className="font-lora">
         {components.map((component, index) => {
+          if (isWebView(component)) {
+            return (
+              <div
+                key={component.html.slice(0, 70)}
+                className="[&_a:hover]:shadow-highlight-franklin [&_a]:shadow-underline-black "
+              >
+                {htmlParser(component.html)}
+              </div>
+            );
+          }
+
           if (isText(component)) {
             return (
               <TextContent

@@ -22,9 +22,9 @@ const MainNavbar = () => {
   }, [pathname, isDark]);
 
   return (
-    <div className="max-w-container-lg mx-auto w-full flex items-end h-[48px] px-5">
+    <div className="max-w-container-lg mx-auto w-full flex items-end h-[48px] md:h-[80px] md:mb-20 px-5">
       <nav className="ml-auto pb-2 border-b border-b-black dark:border-white text-sm text-black dark:text-white md:text-base">
-        <ul className="md:text-lg ">
+        <ul className="md:text-xl ">
           {navbarLinks.map((link) => (
             <li
               className="hidden md:inline [&>a]:first-of-type:text-2xl [&>a]:first-of-type:font-semibold"
@@ -41,16 +41,16 @@ const MainNavbar = () => {
           ))}
 
           <li className="flex items-center md:inline hover:opacity-50">
-            <span className="hidden md:inline font-medium">More</span>
+            <span className="hidden md:inline">More</span>
             <span className="md:hidden">
-              <span>Menu</span>
+              <span className="font-kanit">Menu</span>
             </span>
             <Image
               src={isDark ? "/plus-white.svg" : "/plus-black.svg"}
-              width={20}
-              height={20}
+              width={25}
+              height={25}
               alt="plus"
-              className="inline-block ml-2"
+              className="inline-block ml-2 mb-1"
             />
           </li>
         </ul>
