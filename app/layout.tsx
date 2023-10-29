@@ -36,9 +36,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
-        className={`${inter.className} ${oswald.variable} ${lora.variable} ${kanit.variable} dark dark-mode`}
+        className={`${inter.className} ${oswald.variable} ${lora.variable} ${kanit.variable} `}
       >
         <div> {children}</div>
       </body>

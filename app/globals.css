@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.dark-mode {
-  background-color: #000 !important;
-  color: #fff !important;
+@layer base {
+  :root.dark {
+    background-color: #131313;
+    color: #fff;
+  }
 }
+
+/* .dark-mode {
+  color: #fff !important;
+} */
 
 .bg-repeating-lines-dark {
   background-image: linear-gradient(

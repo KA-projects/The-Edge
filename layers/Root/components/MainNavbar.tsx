@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { navbarLinks } from "../constants";
+import React, { useEffect, useLayoutEffect } from "react";
+import { navbarLinks } from "../../MainPage/constants";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -11,13 +11,11 @@ const MainNavbar = () => {
 
   const isDark = pathname === "/" || pathname === "/tech";
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (isDark) {
-      document.body.classList.add("dark");
-      document.body.classList.add("dark-mode");
+      document.documentElement.classList.add("dark");
     } else {
-      document.body.classList.remove("dark");
-      document.body.classList.remove("dark-mode");
+      document.documentElement.classList.remove("dark");
     }
   }, [pathname, isDark]);
 
