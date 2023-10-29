@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { navbarLinks } from "../../MainPage/constants";
+import { navbarLinks } from "../constants";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 const MainNavbar = () => {
   const pathname = usePathname();
 
-  const isDark = pathname === "/";
+  const isDark = pathname === "/" || pathname === "/tech";
 
   useEffect(() => {
     if (isDark) {
@@ -32,7 +32,7 @@ const MainNavbar = () => {
             >
               <Link
                 className="hover:opacity-50 hover:transition-all "
-                href={link === "The Edge" ? "/" : link.toLowerCase()}
+                href={link === "The Edge" ? "/" : "/" + link.toLowerCase()}
               >
                 {link}
               </Link>

@@ -15,6 +15,8 @@ export type ImagePart = {
   };
 };
 
+export type ImageURLs = Pick<ImagePart, "imageURLs">;
+
 export type WebviewPart = {
   role: "webview";
   html: string;

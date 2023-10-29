@@ -8,7 +8,9 @@ import { DetailComponents } from "../types";
 import ArticleBody from "./ArticleBody";
 
 const NewsDetail = ({ newsDetail }: NewsDetailProps) => {
-  // console.log(newsDetail);
+  console.log(newsDetail);
+  console.log(newsDetail.imageURLs);
+  console.log(newsDetail.ledeImage);
 
   return (
     <div className="mx-auto md:max-w-container-md lg:max-w-container-lg">
@@ -18,6 +20,7 @@ const NewsDetail = ({ newsDetail }: NewsDetailProps) => {
         published={newsDetail.published}
         byline={newsDetail.byline}
         ledeImage={newsDetail.ledeImage}
+        imageURLs={newsDetail.imageURLs}
       />
 
       <ArticleBody components={newsDetail.components as DetailComponents[]} />

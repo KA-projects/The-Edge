@@ -75,7 +75,7 @@ const ArticleBody = ({ components }: { components: DetailComponents[] }) => {
         })}
       </div>
 
-      <div className="max-w-[300px] max-h-[6000px] pt-[1300px] hidden lg:block">
+      <div className="max-w-[300px] max-h-[6000px] hidden lg:block">
         <StickyStoryList
           title="most popular"
           bgColor="bg-transparent"

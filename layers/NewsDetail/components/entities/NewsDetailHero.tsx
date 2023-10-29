@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import CopyIconSVG from "../icons/CopyIconSVG";
 import { LedeImageType } from "@/data/types/NewsDetail";
+import { ImageURLs } from "../types";
 
 type NewsDetailHeroProps = {
   title: string;
@@ -17,7 +18,8 @@ const NewsDetailHero = ({
   byline,
   published,
   ledeImage,
-}: NewsDetailHeroProps & LedeImageType) => {
+  imageURLs,
+}: NewsDetailHeroProps & LedeImageType & ImageURLs) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -74,7 +76,11 @@ const NewsDetailHero = ({
             <div className="relative">
               <span className="image-background"></span>
               <Image
-                src={ledeImage.imageURLs.large}
+                src={
+                  ledeImage.imageURLs.large
+                    ? ledeImage.imageURLs.large
+                    : imageURLs?.large
+                }
                 width={320}
                 height={320}
                 className="image"
