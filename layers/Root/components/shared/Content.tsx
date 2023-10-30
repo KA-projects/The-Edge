@@ -20,7 +20,7 @@ const Content = ({ title, byline, published, internalID }: ContentProps) => {
   return (
     <div className="md:pr-2 max-w-content-block-compact">
       <h2 className="group-hover:underline group-hover:decoration-franklin text-2xl font-kanit leading-6 font-bold">
-        <Link href={`/news/${internalID}`}> {title}1 </Link>
+        <Link href={`/news/${internalID}`}> {title} </Link>
       </h2>
 
       <div className="flex flex-col md:flex-row md:items-start md:justify-between pt-1 font-kanit text-[11px] tracking-widest uppercase">
