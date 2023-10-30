@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useLayoutEffect } from "react";
-import { navbarLinks } from "../../../MainPage/constants";
+import { navbarLinks } from "../../constants";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -9,7 +9,13 @@ import { usePathname } from "next/navigation";
 const MainNavbar = () => {
   const pathname = usePathname();
 
-  const isDark = pathname === "/" || pathname === "/tech";
+  const isDark =
+    pathname === "/" ||
+    pathname === "/tech" ||
+    pathname === "/reviews" ||
+    pathname === "/cryptocurrencies" ||
+    pathname === "/pursuits"||
+    pathname === "/politics";
 
   useLayoutEffect(() => {
     if (isDark) {

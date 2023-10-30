@@ -1,15 +1,15 @@
+"use client";
+
 import { StoryProps } from "@/data/types/NewsListProps";
 import StoryPackage from "@/layers/Root/components/entities/StoryPackage";
 import React from "react";
-import { TechStoryPackageType } from "../../types";
 import Border from "@/layers/Root/components/shared/Border";
 import StickyStoryList from "@/layers/Root/components/cards/StickyStoryList";
+import { StoriesPackageType } from "../../types";
 
-const StoriesRiver = ({
-  storyPackage,
-}: {
-  storyPackage: TechStoryPackageType;
-}) => {
+const StoriesRiver = ({ storyPackage }: StoriesPackageType) => {
+  console.log(storyPackage);
+
   return (
     <div className="px-2 pt-20">
       <div className="lg:flex">

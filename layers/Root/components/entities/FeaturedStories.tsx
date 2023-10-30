@@ -40,7 +40,7 @@ const FeaturedStories = ({
         <div className="w-full h-full ">
           <Link
             // href={`/news/${news.internalID}`}
-            href={`/news/S2A5AWT1UM0W01`}
+            href={`/news/${news.internalID}`}
             className="block w-full h-full  relative min-h-full max-w-full max-h-[464px]"
             tabIndex={1}
             aria-hidden

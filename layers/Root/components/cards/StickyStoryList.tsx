@@ -28,8 +28,6 @@ const StickyStoryList = ({
   textIndexColor,
   isLocatedOnNewsDetailPage,
 }: StoryListProps & Pick<StoryProps, "stories">) => {
-  console.log(stories);
-
   return (
     <div
       className={`max-w-full sticky top-10 font-kanit ${textColor}  rounded  md:max-w-container-sm lg:rounded-3xl `}

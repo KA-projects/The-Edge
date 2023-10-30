@@ -1,7 +1,7 @@
 export const navbarLinks = [
   "The Edge",
   "Tech",
-  "Reviews",
-  "Science",
-  "Entertainment",
+  "Cryptocurrencies",
+  "Pursuits",
+  "Politics",
 ];

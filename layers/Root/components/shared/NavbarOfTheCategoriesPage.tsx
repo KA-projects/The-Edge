@@ -1,7 +1,8 @@
 import SharedNavbar from "@/layers/Root/components/shared/SharedNavbar";
 import React from "react";
+import { CategoryTitleType } from "../../types";
 
-const NavbarOfTechPage = () => {
+const NavbarOfTheCategoriesPage = ({ categoryTitle }: CategoryTitleType) => {
   return (
     <header className="relative flex flex-col justify-between bg-blurpre h-[523px] md:min-h-[485px]">
       <div>
@@ -18,8 +19,8 @@ const NavbarOfTechPage = () => {
           <div className="font-kanit font-medium text-sm uppercase text-franklin tracking-[0.15em]">
             All stories tagged:
           </div>
-          <h1 className="font-oswald text-7xl font-medium tracking-tighter md:text-9xl">
-            Tech
+          <h1 className="font-oswald capitalize text-7xl font-medium tracking-tighter md:text-9xl">
+            {categoryTitle}
           </h1>
         </div>
       </div>
@@ -27,4 +28,4 @@ const NavbarOfTechPage = () => {
   );
 };
 
-export default NavbarOfTechPage;
+export default NavbarOfTheCategoriesPage;
