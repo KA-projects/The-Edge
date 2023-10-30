@@ -2,8 +2,9 @@
 
 import { StoryProps } from "@/data/types/NewsListProps";
 import React from "react";
-import { formatDate } from "../../utils/dateMethods";
-import { extractTextUpToFirstComma } from "../../utils/stringMethods";
+import { formatDate } from "../../../MainPage/utils/dateMethods";
+import { extractTextUpToFirstComma } from "../../../MainPage/utils/stringMethods";
+import Link from "next/link";
 
 type StoryListProps = {
   title: string;
@@ -13,19 +14,21 @@ type StoryListProps = {
   bgIndexColor: string;
   textIndexColor: string;
   isLocatedOnNewsDetailPage: boolean;
+  titleColor: string;
 };
 
 const StickyStoryList = ({
   title,
-  story,
+  titleColor,
+  stories,
   bgColor,
   textColor,
   borderColor,
   bgIndexColor,
   textIndexColor,
   isLocatedOnNewsDetailPage,
-}: StoryListProps & Pick<StoryProps, "story">) => {
-  const stories = story.stories;
+}: StoryListProps & Pick<StoryProps, "stories">) => {
+  console.log(stories);
 
   return (
     <div
@@ -48,10 +51,10 @@ const StickyStoryList = ({
 
         <h2
           style={{ writingMode: "vertical-rl", textOrientation: "sideways" }}
-          className={`hidden ${
+          className={`hidden ${titleColor} ${
             isLocatedOnNewsDetailPage
-              ? " text-franklin -z-10 text-[100px] bottom-6"
-              : " text-blurpre-39 z-10 text-[110px] bottom-0"
+              ? "  -z-10 text-[90px] bottom-6"
+              : "  z-10 text-[110px] bottom-0"
           } lg:block absolute   -right-1   rotate-180
            whitespace-pre leading-none tracking-tighter capitalize font-oswald font-bold   `}
         >
@@ -69,7 +72,7 @@ const StickyStoryList = ({
             isLocatedOnNewsDetailPage ? "lg:w-full" : "lg:w-[320px]"
           }`}
         >
-          {stories.slice(0, 5).map((story, index) => (
+          {stories.stories.slice(0, 5).map((story, index) => (
             <li
               key={story.id}
               className={`flex  ${borderColor} py-4 ${
@@ -83,8 +86,8 @@ const StickyStoryList = ({
               </div>
 
               <div>
-                <h3 className="text-lg leading-[1] font-kanit font-medium">
-                  {story.title}{" "}
+                <h3 className="text-lg hover:text-franklin leading-[1] font-kanit font-medium">
+                  <Link href={`/news/${story.internalID}`}>{story.title} </Link>
                 </h3>
                 {isLocatedOnNewsDetailPage ? null : (
                   <p className=" text-sm font-kanit">
@@ -96,7 +99,7 @@ const StickyStoryList = ({
                 )}
 
                 {isLocatedOnNewsDetailPage ? (
-                  <hr className="border-b w-2/3 -ml-7 mt-4 border-b-blurpre" />
+                  <hr className={`${borderColor} w-2/3 -ml-7 mt-4 `} />
                 ) : null}
               </div>
             </li>

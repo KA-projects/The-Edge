@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         "gray-13": "rgb(19,19,19)",
+        "gray-18": "rgb(24,24,24)",
         "gray-31": "rgb(49,49,49)",
         franklin: "rgb(60,255,208)",
         "gray-64": "rgb(148,148,148)",
@@ -38,6 +39,7 @@ const config: Config = {
         "highlight-blurple": "inset 0 -.5em 0 0 #5200ff",
         "highlight-franklin": "inset 0 -.5em 0 0 #3cffd0",
         "underline-black": "inset 0 -1px 0 0 #000",
+        "underline-franklin": "inset 0 -1px 0 0 #3cffd0",
       },
     },
   },

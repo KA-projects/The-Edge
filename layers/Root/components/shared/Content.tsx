@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import React from "react";
-import { extractTextUpToFirstComma } from "../../utils/stringMethods";
-import { formatDate } from "../../utils/dateMethods";
+import { extractTextUpToFirstComma } from "../../../MainPage/utils/stringMethods";
+import { formatDate } from "../../../MainPage/utils/dateMethods";
 import Image from "next/image";
-import { useCommentsCount } from "../../utils/hooks/useCommentsCount";
+import { useCommentsCount } from "../../../MainPage/utils/hooks/useCommentsCount";
 
 type ContentProps = {
   title: string;

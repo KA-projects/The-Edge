@@ -2,7 +2,7 @@ import LogoSVG from "@/layers/Root/icons/LogoSVG";
 import Link from "next/link";
 import React from "react";
 import MainNavbar from "./MainNavbar";
-import { LogoSVGType } from "../types";
+import { LogoSVGType } from "../../types";
 
 const SharedNavbar = ({ fillColor }: LogoSVGType) => {
   return (

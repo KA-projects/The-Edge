@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useLayoutEffect } from "react";
-import { navbarLinks } from "../../MainPage/constants";
+import { navbarLinks } from "../../../MainPage/constants";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -48,7 +48,7 @@ const MainNavbar = () => {
               width={25}
               height={25}
               alt="plus"
-              className="inline-block ml-2 mb-1"
+              className="inline-block ml-2 md:mb-1"
             />
           </li>
         </ul>

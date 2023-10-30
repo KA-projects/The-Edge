@@ -2,7 +2,7 @@ import React from "react";
 import { DetailComponents, ImagePart, TextPart, WebviewPart } from "../types";
 import TextContent from "../shared/TextContent";
 import ImageContent from "../shared/ImageContent";
-import StickyStoryList from "@/layers/MainPage/components/cards/StickyStoryList";
+import StickyStoryList from "@/layers/Root/components/cards/StickyStoryList";
 import { fakeNewsList } from "@/data/fakeNewsList";
 
 const ArticleBody = ({ components }: { components: DetailComponents[] }) => {
@@ -78,12 +78,13 @@ const ArticleBody = ({ components }: { components: DetailComponents[] }) => {
       <div className="max-w-[300px] max-h-[6000px] hidden lg:block">
         <StickyStoryList
           title="most popular"
+          titleColor="text-franklin"
           bgColor="bg-transparent"
           textColor="text-black"
           borderColor="border-b-blurpre"
           bgIndexColor="bg-white"
           textIndexColor="text-blurpre"
-          story={haveMoreFiveStories[3]}
+          stories={haveMoreFiveStories[3]}
           isLocatedOnNewsDetailPage={true}
         />
       </div>

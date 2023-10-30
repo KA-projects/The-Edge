@@ -7,7 +7,7 @@ import React from "react";
 import { extractTextUpToFirstComma } from "../../utils/stringMethods";
 import { formatDate } from "../../utils/dateMethods";
 import { useCommentsCount } from "../../utils/hooks/useCommentsCount";
-import Content from "../shared/Content";
+import Content from "../../../Root/components/shared/Content";
 
 const HeroTopStories = ({ newsContent }: NewsProps) => {
   const newsStories = newsContent?.stories.slice(0, 5);
