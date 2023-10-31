@@ -1,6 +1,6 @@
 import { fakeNewsDetail } from "@/data/fakeNewsDetail";
 import { fetchNewsDetailByInternalID } from "@/data/fetchData";
-import NavbarOfNewsDetail from "@/layers/NewsDetail/components/shared/NavbarOfNewsDetail";
+import NavbarOfNewsDetail from "@/layers/NewsDetail/components/entities/NavbarOfNewsDetail";
 
 import NewsDetail from "@/layers/NewsDetail/components/entities/NewsDetail";
 
