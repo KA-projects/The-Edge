@@ -1,4 +1,4 @@
-import { TechStoryPackageType } from "@/layers/TechPage/types";
+import { fakeTechNewsList } from "@/data/DataTechPage/fakeTechNewsList";
 
 export type LogoSVGType = {
   fillColor: string;
@@ -9,5 +9,5 @@ export type CategoryTitleType = {
 };
 
 export type StoriesPackageType = {
-  storyPackage: TechStoryPackageType;
+  storyPackage: typeof fakeTechNewsList.modules;
 };

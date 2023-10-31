@@ -7,6 +7,7 @@ import Border from "@/layers/Root/components/shared/Border";
 import StickyStoryList from "@/layers/Root/components/cards/StickyStoryList";
 import { StoriesPackageType } from "../../types";
 
+
 const StoriesRiver = ({ storyPackage }: StoriesPackageType) => {
   console.log(storyPackage);
 

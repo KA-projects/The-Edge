@@ -3,15 +3,14 @@ import StoriesRiver from "@/layers/Root/components/entities/StoriesRiver";
 import TechFeaturedStories from "@/layers/Root/components/entities/TechFeaturedStories";
 import NavbarOfTheCategoriesPage from "@/layers/Root/components/shared/NavbarOfTheCategoriesPage";
 import CategoryDescription from "@/layers/Root/components/shared/CategoryDescription";
-import { TechStoryPackageType } from "@/layers/TechPage/types";
 import React from "react";
-import { CategoryTitleType } from "../../types";
+import { CategoryTitleType, StoriesPackageType } from "../../types";
 
 const Categories = ({
   newsContent,
   storyPackage,
   categoryTitle,
-}: NewsProps & { storyPackage: TechStoryPackageType } & CategoryTitleType) => {
+}: NewsProps & StoriesPackageType & CategoryTitleType) => {
   return (
     <>
       <NavbarOfTheCategoriesPage categoryTitle={categoryTitle} />

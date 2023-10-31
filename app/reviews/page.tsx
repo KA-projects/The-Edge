@@ -7,7 +7,9 @@ import React from "react";
 const Reviews = async () => {
   const dataOfView = await fetchNewsList("cryptocurrencies");
   const data = dataOfView.modules.filter(
-    (story) => story.type === "story_package" || story.type === "story_list"
+    (story) =>
+      (story.type === "story_package" || story.type === "story_list") &&
+      story.stories.length >= 2
   );
 
   return (

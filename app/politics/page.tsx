@@ -8,8 +8,8 @@ const Pursuits = async () => {
   const dataOfView = await fetchNewsList("politics");
   const data = dataOfView.modules.filter(
     (story) =>
-      story.type === "story_package" ||
-      (story.type === "story_list" && story.stories.length >= 2)
+      (story.type === "story_package" || story.type === "story_list") &&
+      story.stories.length >= 2
   );
 
   return (
