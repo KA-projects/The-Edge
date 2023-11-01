@@ -26,9 +26,24 @@ const DialogModal = ({ isOpen, closeModal }: DialogModalType) => {
     setOpen(updatedOpenObject);
   };
 
+  const handleOnClose = () => {
+    for (const key in openObject) {
+      if (Object.prototype.hasOwnProperty.call(openObject, key)) {
+        openObject[key] = false;
+      }
+    }
+  };
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-50" onClose={closeModal}>
+      <Dialog
+        as="div"
+        className="relative z-50"
+        onClose={() => {
+          closeModal();
+          handleOnClose();
+        }}
+      >
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -46,14 +61,14 @@ const DialogModal = ({ isOpen, closeModal }: DialogModalType) => {
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
+              enterFrom="opacity-0 translate-x-[340px]"
+              enterTo="opacity-100 translate-x-0"
               leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
+              leaveFrom="opacity-100 translate-x-0"
+              leaveTo="opacity-0 translate-x-[340px]"
             >
               <Dialog.Panel className="w-full h-full bg-blurpre shadow-xl transition-all">
-                <aside className="py-6 pl-4 pr-3 font-kanit">
+                <aside className="py-6 pl-4 pr-3 h-full font-kanit overflow-y-auto">
                   <button
                     onClick={closeModal}
                     className=" cursor-pointer hover:opacity-60 ml-auto block mr-4"
@@ -95,13 +110,15 @@ const DialogModal = ({ isOpen, closeModal }: DialogModalType) => {
                           </div>
 
                           {openObject[title] ? (
-                            <ol className="pt-4 pl-2">
+                            <ol className="pt-4 pl-2 ">
                               {categories.map((category) => (
                                 <li
-                                  className="text-franklin text-2xl pb-5 last:pb-0 cursor-pointer  hover:opacity-60"
+                                  className="text-franklin  pb-5 last:pb-0 "
                                   key={category}
                                 >
-                                  {category}
+                                  <span className="cursor-pointer inline  hover:opacity-60 text-2xl leading-[1]">
+                                    {category}
+                                  </span>
                                 </li>
                               ))}
                             </ol>
